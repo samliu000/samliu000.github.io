@@ -315,7 +315,7 @@ footer a {
 /* Fade in animation */
 @keyframes fade-in {
   100% {
-    opacity: 100;
+    opacity: 1;
   }
 }
 
