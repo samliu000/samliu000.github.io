@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Page to write experimental code">
+    <meta name="keywords" content="Samuel Liu experiments">
+    <meta name="author" content="Samuel Liu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <link href="../images/favicon.ico" rel="icon">
+    <style>
+        canvas {
+            border: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">
+                <img src="../images/home.svg" alt="home icon">
+            </a>
+            <h1>Experiments</h1>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        <section>
+            <h3>Experiment with <code>canvas</code></h3>
+            <canvas id="testCanvas">Your browser doesn't support the canvas tag</canvas>
+            <script>
+                var cvs = document.getElementById("testCanvas");
+                var ctx = cvs.getContext("2d");
+                ctx.fillStyle = "#FFFF22";
+                ctx.fillRect(0, 0, 50, 50);
+            </script>
+        </section>
+        <hr>
+
+        <section>
+            <h3>Experiment with <code>aside</code></h3>
+            <p>
+                "To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is
+                extremely subtle, and without a solid grasp of theoretical physics most of the jokes will
+                go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly
+                woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya
+                literature, for instance. The fans understand this stuff; they have the intellectual capacity
+                to truly appreciate the depths of these jokes, to realise that they're not just funny- they
+                say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE
+                idiots- of course they wouldn't appreciate, for instance, the humour in Rick's existential catchphrase
+                "Wubba Lubba Dub Dub," which itself is a cryptic reference to Turgenev's Russian epic Fathers and Sons.
+                I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in
+                confusion as Dan Harmon's genius wit unfolds itself on their television screens. What fools.. how I pity
+                them. 😂"
+            </p>
+            <aside>
+                <p>
+                    <b><i>ASIDE! This is a sarcastic copypasta</i></b>
+                </p>
+            </aside>
+            <p>
+                "And yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It's for the ladies'
+                eyes only- and even then they have to demonstrate that they're within 5 IQ points of my own (preferably
+                lower) beforehand. Nothin personnel kid 😎" - some guy on reddit
+            </p>
+        </section>
+        <hr>
+
+        <section>
+            <h3>Experiment with <code>b</code>, <code>i</code> vs <code>strong</code>, <code>em</code></h3>
+            <p>
+                <b>Text with b tag</b><br>
+                <i>Text with i tag</i><br>
+                <strong>Text with strong tag</strong><br>
+                <em>Text with em tag</em><br>
+            </p>
+        </section>
+        <hr>
+
+        <section>
+            <h3>Experiment with <code>pre</code></h3>
+            <pre>
+                Here, I have some
+                    preformatted
+                text
+                        YAY!
+            </pre>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>picture</code></h3>
+            <picture>
+                <source media="(min-width:650px)" srcset="../images/experiences_icon.svg" width="100" height="100">
+                <source media="(min-width:465px)" srcset="../images/projects_icon.svg" width="100" height="100">
+                <img src="../images/coursework_icon.svg" alt="coursework icon" width="100" height="100">
+            </picture>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>figure</code></h3>
+            <figure>
+                <img src="../images/coursework_icon.svg" alt="coursework icon" width="100" height="100">
+                <figcaption>This is a image of a person reading a book</figcaption>
+            </figure>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>iframe</code></h3>
+            <h4>Bing iFrame</h4>
+            <iframe src="https://www.bing.com" title="Google iFrame" width="200" height="200"></iframe>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>audio</code></h3>
+            <audio controls>
+                <source src="../audios/minecraft_village_idle.ogg">
+                <source src="../audios/random_sound.mp3">
+                Cannot play audio
+            </audio>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>video</code></h3>
+            <video controls>
+                <source src="../videos/videoplayback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>svg</code></h3>
+            <p>This is a circle
+                <svg>
+                    <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="4" fill="lightblue" />
+                </svg>
+            </p>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with ol</h3>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>select</code></h3>
+            <select name="groceries" id="groceries_id">
+                <optgroup label="Fruits">
+                    <option value="apple">Apple</option>
+                    <option value="orange">Orange</option>
+                    <option value="pear">Pear</option>
+                </optgroup>
+                <optgroup label="Vegetables">
+                    <option value="carrot">Carrot</option>
+                    <option value="potato">Potato</option>
+                    <option value="greenbeans">Green Beans</option>
+                </optgroup>
+            </select>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>form</code></h3>
+            <form>
+                <fieldset>
+                    <legend>Random Form</legend>
+                    <label for="textarea_id">Text Area</label><br>
+                    <textarea id="textarea_id" name="mytextarea" rows="2"
+                        cols="50">Put your stuff in the text area :)</textarea><br>
+
+                    <label for="colorinput_id">Color Input</label><br>
+                    <input type="color" id="colorinput_id" name="mycolorinput"><br>
+
+                    <label for="stuff_id">Choose your stuff</label>
+                    <input list="stuffs" name="stuff" id="stuff_id"><br>
+                    <datalist id="stuffs">
+                        <option value="Pen">
+                        <option value="Pineapple">
+                        <option value="Apple">
+                    </datalist>
+
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>details</code></h3>
+            <details>
+                <summary>Turkeys are not chickens</summary>
+                <p>Turkeys are not chickens because turkeys lay turkey eggs while chickens lay chicken eggs</p>
+            </details>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>template</code></h3>
+            <template>
+                <p>This is a template. It is hidden to the user and enabled by javascript. We should use this tag
+                    whenever we have some reusable content that we want to generate over and over.</p>
+            </template>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>div</code></h3>
+            <div>
+                <p>This is inside a div</p>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h3>Experiment with <code>caption and col</code></h3>
+            <table>
+                <caption>Sample Table</caption>
+                <colgroup>
+                    <col class="first column">
+                    <col class=" second column">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Heading 1</th>
+                        <th>Heading 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1:1</td>
+                        <td>1:2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <hr>
+
+    <footer>
+		<p>This page was made with &hearts; by Samuel Liu</p>
+		<div>
+			<a href="mailto:samuel.liu1004+website@gmail.com">
+				<img src="../images/email_icon.svg" alt="Email Icon" width="30" height="30">
+			</a>
+			<a href="https://github.com/samliu000" target="_blank">
+				<img src="../images/github_icon.svg" alt="Github Icon" width="30" height="30">
+			</a>
+			<a href="https://www.linkedin.com/in/samuel-liu-1004/" target="_blank">
+				<img src="../images/linkedin_icon.svg" alt="LinkedIn Icon" width="30" height="30">
+			</a>
+		</div>
+	</footer>
+</body>
+
+</html>

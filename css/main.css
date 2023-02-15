@@ -1,0 +1,278 @@
+:root {
+  --main-blue: #bde3ff;
+  --cursor-blue: #49adf5;
+  --light-gray: #e6e6e6;
+  --pulse-gray: #cad7e0;
+  --pulse-duration: 0.5s;
+  --typing-duration: 1.5s;
+  --profile-pic-shadow-gray: rgb(167, 166, 166);
+}
+
+* {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* Tablet & Laptop */
+@media (min-width: 641px) {
+  :root {
+    --animation-font-size: 1.4em;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 35px;
+    column-gap: 50px;
+  }
+
+  #samuel-headshot {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  section {
+    width: 22%;
+  }
+
+  section > a > img {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  footer {
+    margin-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  h1 {
+    margin-left: 30px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1007px) {
+  :root {
+    --animation-font-size: 1.3em;
+  }
+
+  #samuel-headshot {
+    width: 150px;
+    height: 150px;
+  }
+
+  main {
+    justify-content: center;
+  }
+
+  section {
+    width: 250px;
+  }
+}
+
+/* Smaller than Tablet */
+@media (max-width: 640px) {
+  :root {
+    --animation-font-size: 1.3em;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #samuel-headshot {
+    width: 150px;
+    height: 150px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    width: 250px;
+    margin-top: 10%;
+  }
+
+  section > a > img {
+    width: 20vw;
+  }
+
+  footer {
+    margin-top: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 2vh 10px;
+  }
+}
+
+/* Firefox */
+@-moz-document url-prefix() {
+  :root {
+    --pulse-duration: 0.75s;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  margin-top: 2%;
+  padding: 2vw;
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px lightgray;
+  transition: box-shadow 0.35s;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+section > a {
+  aspect-ratio: 1/1;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section > a > h2 {
+  margin: 0;
+  padding-top: 1.5em;
+  transition: font-size 0.35s linear;
+}
+
+h1 > span {
+  color: grey;
+  font-size: 80%;
+}
+
+#samuel-headshot {
+  border-radius: 50%;
+  box-shadow: 4px 4px 5px var(--profile-pic-shadow-gray);
+}
+
+footer {
+  background-color: var(--light-gray);
+}
+
+footer div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  column-gap: 15px;
+}
+
+footer a {
+  width: 30px;
+  height: 30px;
+}
+
+/* typewriter animation */
+@media (min-width: 500px) {
+  .typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid var(--cursor-blue);
+    width: 0;
+    white-space: nowrap;
+    animation: typing var(--typing-duration) steps(30, end) forwards,
+      blink 1s infinite;
+  }
+
+  .typewriter-container {
+    display: inline-block;
+  }
+
+  h1 > span {
+    display: block;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    from {
+      border-color: transparent;
+    }
+
+    to {
+      border-color: var(--cursor-blue);
+    }
+  }
+}
+
+/* pulse animation */
+section:hover,
+section:focus {
+  box-shadow: 0 0 0 var(--profile-pic-shadow-gray);
+}
+
+section > a:hover,
+section > a:focus {
+  font-size: var(--animation-font-size);
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  animation: pulse var(--pulse-duration), fontInc var(--pulse-duration) ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fontInc {
+  100% {
+    font-size: var(--animation-font-size);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--pulse-gray);
+  }
+  100% {
+    box-shadow: 0 0 5px 2em transparent;
+  }
+}

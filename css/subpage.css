@@ -1,0 +1,408 @@
+:root {
+  --main-blue: #bde3ff;
+  --dark-blue: rgb(52, 177, 240);
+  --light-gray: #e6e6e6;
+}
+
+* {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* Tablet & Laptop */
+@media (min-width: 641px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  /* experience blocks */
+  .experience {
+    width: 65ch;
+  }
+
+  .experience img {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* project blocks */
+  .project {
+    width: 65ch;
+  }
+
+  /* coursework block */
+  .coursework-list {
+    margin-top: 25px;
+  }
+
+  .coursework-list li {
+    font-size: 1.2rem;
+  }
+
+  .coursework-list p {
+    padding: 0;
+    margin: 0;
+    width: 70%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* experience blocks */
+  .experience {
+    width: 55ch;
+  }
+
+  /* project blocks */
+  .project {
+    width: 55ch;
+  }
+
+  /* coursework block */
+  .coursework-list {
+    width: 55ch;
+  }
+}
+
+/* Phone Tablet */
+@media (max-width: 640px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  footer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 2vh 10px;
+  }
+  /* experience blocks */
+  .experience {
+    width: 70%;
+  }
+
+  .experience img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* project blocks */
+  .project {
+    width: 80%;
+  }
+
+  /* coursework blocks */
+  .coursework-list {
+    width: 80%;
+    text-align: center;
+  }
+
+  .coursework-list span {
+    display: none;
+  }
+
+  .coursework-list p {
+    width: 100%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 350px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .experience span {
+    font-size: 1rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+/* header, main, footer */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* header */
+header {
+  background-color: var(--light-gray);
+  position: sticky;
+  top: 0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  aspect-ratio: 1/1;
+  padding: 0.5vw;
+  background-color: var(--main-blue);
+}
+
+nav img {
+  width: 40px;
+  height: 40px;
+}
+
+/* general text styling */
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  margin-left: 15px;
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2 > span {
+  display: inline-flex;
+  color: rgb(95, 95, 95);
+  font-size: 0.65em;
+}
+
+/* experience blocks */
+.experience {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  opacity: 0;
+  animation: fade-in 0.8s forwards, fly-in-right 1s forwards;
+}
+
+.experience div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.experience h2 {
+  margin-left: 15px;
+}
+
+.experience p {
+  font-size: 1.5em;
+}
+
+.experience li:nth-child(n + 2) {
+  margin-top: 0.8vh;
+}
+
+/* project blocks */
+.project {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  opacity: 0;
+  animation: fade-in 1s forwards, fly-in-right 1s forwards;
+}
+
+.title-links {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+/* coursework */
+.coursework-list {
+  border-radius: 10px;
+  padding: 0;
+  list-style: none;
+  opacity: 0;
+  animation: fade-in 2s forwards;
+}
+
+.coursework-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 10px;
+  background-color: var(--main-blue);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 200;
+  opacity: 0;
+  animation: fade-in 1s forwards, fly-in-right 1s forwards;
+}
+
+.coursework-list span {
+  background-color: var(--dark-blue);
+  padding: 2px;
+  border-radius: 10px;
+  width: 110px;
+  color: white;
+  text-align: center;
+}
+
+.coursework-list p {
+  padding: 0;
+  margin: 0;
+}
+
+.coursework-list li:nth-child(n + 2) {
+  margin-top: 0.8vh;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+footer {
+  margin-top: 25px;
+  background-color: var(--light-gray);
+}
+
+footer div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  column-gap: 15px;
+}
+
+footer a {
+  width: 30px;
+  height: 30px;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes fly-in-left {
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fly-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+}
+
+/* Fade in animation delays */
+.experience:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.experience:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.experience:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.experience:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.experience:nth-child(6) {
+  animation-delay: 1s;
+}
+.experience:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.experience:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.experience:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+.project:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.project:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.project:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.coursework-list li:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.coursework-list li:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.coursework-list li:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.coursework-list li:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.coursework-list li:nth-child(6) {
+  animation-delay: 0.25s;
+}
+.coursework-list li:nth-child(7) {
+  animation-delay: 0.3s;
+}
+.coursework-list li:nth-child(8) {
+  animation-delay: 0.35s;
+}
+.coursework-list li:nth-child(9) {
+  animation-delay: 0.4s;
+}
+.coursework-list li:nth-child(10) {
+  animation-delay: 0.45s;
+}
+.coursework-list li:nth-child(11) {
+  animation-delay: 0.5s;
+}
+.coursework-list li:nth-child(12) {
+  animation-delay: 0.55s;
+}
+.coursework-list li:nth-child(13) {
+  animation-delay: 0.6s;
+}
+.coursework-list li:nth-child(14) {
+  animation-delay: 0.65s;
+}
