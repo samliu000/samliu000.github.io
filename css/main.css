@@ -126,13 +126,6 @@
   }
 }
 
-/* Firefox */
-@-moz-document url-prefix() {
-  :root {
-    --pulse-duration: 0.75s;
-  }
-}
-
 body {
   display: flex;
   flex-direction: column;
