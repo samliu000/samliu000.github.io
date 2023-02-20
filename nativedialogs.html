@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Page displaying 4 native dialogs">
+    <meta name="author" content="Samuel Liu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Dialogs</title>
+    <link href="images/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <main>
+        <div class="button-group">
+            <button id="alert-button">Alert</button>
+            <button id="confirm-button">Confirm</button>
+            <button id="prompt-button">Prompt</button>
+            <button id="safe-prompt-button">Safer Prompt</button>
+        </div>
+        <output></output>
+    </main>
+    <script>
+        // Alert
+        const alertButton = document.getElementById("alert-button");
+        alertButton.addEventListener("click", () => { alert("Hi") });
+
+        // Confirm
+        const confirmButton = document.getElementById("confirm-button");
+        confirmButton.addEventListener("click", () => { confirm("Hi") });
+
+        // Prompt
+        const promptButton = document.getElementById("prompt-button");
+        promptButton.addEventListener("click", () => { prompt("Enter a message", "Default mesage") });
+        
+        // Safer Prompt
+        const saferPromptButton = document.getElementById("safe-prompt-button");
+        saferPromptButton.addEventListener("click", () => { prompt("Enter a message", "Default mesage") });
+    </script>
+</body>
+
+</html>
