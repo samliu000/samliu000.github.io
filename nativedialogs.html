@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Page displaying 4 native dialogs">
+    <meta name="author" content="Samuel Liu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Dialogs</title>
+    <link href="images/favicon.ico" rel="icon">
+    <script type="text/javascript" src="javascript/purify.js"></script>
+    <script>
+        function resetOutputTag() {
+            const outputElem = document.getElementById("output");
+            outputElem.innerHTML = "";
+        }
+
+        function setOutputTag(message, sanitize) {
+            if (message == null) {
+                message = "User didn't enter anything";
+            }
+            if (sanitize) {
+                message = DOMPurify.sanitize(message);
+            }
+            const outputElem = document.getElementById("output");
+            outputElem.innerHTML = `The value returned by the confirm method is : ${message}`;
+        }
+
+        function initButtons() {
+            // Alert
+            const alertButton = document.getElementById("alert-button");
+            alertButton.addEventListener("click", () => {
+                resetOutputTag();
+                setTimeout(() => {
+                    alert("Alert processed!");
+                }, 0);
+            });
+
+
+            // Confirm
+            const confirmButton = document.getElementById("confirm-button");
+            confirmButton.addEventListener("click", () => {
+                resetOutputTag();
+                setTimeout(() => {
+                    setOutputTag(confirm("Do you confirm this?"));
+                }, 0);
+            });
+
+            // Prompt
+            const promptButton = document.getElementById("prompt-button");
+            promptButton.addEventListener("click", () => {
+                resetOutputTag();
+                setTimeout(() => {
+                    setOutputTag(prompt("Enter a message"), sanitize = false);
+                }, 0);
+            });
+
+            // Safer Prompt. You can test with <b onclick="alert(0);">Hi</b>
+            const saferPromptButton = document.getElementById("safe-prompt-button");
+            saferPromptButton.addEventListener("click", () => {
+                resetOutputTag();
+                setTimeout(() => {
+                    setOutputTag(prompt("Enter a message"), sanitize = true);
+                }, 0);
+            });
+        }
+
+        // wait for dom to load to initialize the buttons
+        document.addEventListener("DOMContentLoaded", initButtons);
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Simple Dialogs</h1>
+        <div class="button-group">
+            <button id="alert-button">Alert</button>
+            <button id="confirm-button">Confirm</button>
+            <button id="prompt-button">Prompt</button>
+            <button id="safe-prompt-button">Safer Prompt</button>
+        </div>
+        <output id="output"></output>
+    </main>
+</body>
+
+</html>

@@ -2,6 +2,7 @@
   --main-blue: #bde3ff;
   --dark-blue: rgb(52, 177, 240);
   --light-gray: #e6e6e6;
+  --lighter-blue: #d6ecfc;
 }
 
 * {
@@ -312,10 +313,34 @@ footer a {
   height: 30px;
 }
 
+/* Back to Top Button */
+#back-to-top.appear {
+  animation: fade-in-90 1s forwards;
+}
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 5%;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: var(--lighter-blue);
+  cursor: pointer;
+  border-radius: 10px;
+  opacity: 0;
+}
+
 /* Fade in animation */
 @keyframes fade-in {
   100% {
-    opacity: 100;
+    opacity: 1;
+  }
+}
+@keyframes fade-in-90 {
+  100% {
+    opacity: 0.9;
   }
 }
 
