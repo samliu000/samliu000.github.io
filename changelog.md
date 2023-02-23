@@ -1,3 +1,6 @@
+## 02-22-2023 04:28PM
+- Before this change, when user presses back-to-top button, they are instantly teleported to the top of the page. This might seem abrupt. So instead, I changed it so that when user presses the back-to-top button, they will be smooth scrolled to the top. Done via javascript.
+
 ## 02-21-2023 04:42PM
 - Added google analytics to website to track user engagement
 - To do this, I created a google analytics account and added a google third party script to each of my website's pages. 
