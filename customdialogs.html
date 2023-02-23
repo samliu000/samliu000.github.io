@@ -9,17 +9,18 @@
     <title>Native Dialogs</title>
     <link href="images/favicon.ico" rel="icon">
     <script type="text/javascript" src="javascript/purify.js"></script>
+    <script type="text/javascript" src="javascript/customdialog.js" type="module"></script>
 </head>
 
 <body>
     <main>
         <h1>Custom Dialogs</h1>
         <div class="button-group">
-            <button id="alert-button">Alert</button>
-            <button id="confirm-button">Confirm</button>
-            <button id="prompt-button">Prompt</button>
+            <button onclick="onAlertPress()" id="alert-button">Alert</button>
+            <button onclick="onConfirmPress()" id="confirm-button">Confirm</button>
+            <button onclick="onPromptPress()" id="prompt-button">Prompt</button>
         </div>
-        <dialog open>Hello there</dialog>
+        <dialog id="custom-dialog"></dialog>
         <output id="output"></output>
     </main>
 </body>
