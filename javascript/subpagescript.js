@@ -8,15 +8,18 @@ window.onscroll = () => {
 };
 
 function scrollToTop() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function showBackToTopBtn() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
     backToTopBtn.style.display = "block";
     backToTopBtn.classList.add("appear");
   } else {
     backToTopBtn.style.display = "none";
-    backToTopBtn.classList.remove("appear");  }
+    backToTopBtn.classList.remove("appear");
+  }
 }
