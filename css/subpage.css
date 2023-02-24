@@ -3,6 +3,8 @@
   --dark-blue: rgb(52, 177, 240);
   --light-gray: #e6e6e6;
   --lighter-blue: #d6ecfc;
+  --pulse-gray: #cad7e0;
+  --pulse-duration: 0.5s;
 }
 
 * {
@@ -318,6 +320,11 @@ footer a {
   animation: fade-in-90 1s forwards;
 }
 
+#back-to-top:hover {
+  opacity: 1;
+  animation: fade-in-90 1s forwards, pulse var(--pulse-duration) forwards;
+}
+
 #back-to-top {
   display: none;
   position: fixed;
@@ -353,6 +360,15 @@ footer a {
 @keyframes fly-in-right {
   0% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--pulse-gray);
+  }
+  100% {
+    box-shadow: 0 0 5px 1.5em transparent;
   }
 }
 
