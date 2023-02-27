@@ -29,40 +29,45 @@
         function initButtons() {
             // Alert
             const alertButton = document.getElementById("alert-button");
-            alertButton.addEventListener("click", () => {
-                resetOutputTag();
-                setTimeout(() => {
-                    alert("Alert processed!");
-                }, 0);
-            });
+            alertButton.addEventListener("click", showAlert);
 
 
             // Confirm
             const confirmButton = document.getElementById("confirm-button");
-            confirmButton.addEventListener("click", () => {
-                resetOutputTag();
-                setTimeout(() => {
-                    setOutputTag(confirm("Do you confirm this?"));
-                }, 0);
-            });
+            confirmButton.addEventListener("click", showConfirm);
 
             // Prompt
             const promptButton = document.getElementById("prompt-button");
-            promptButton.addEventListener("click", () => {
-                resetOutputTag();
-                setTimeout(() => {
-                    setOutputTag(prompt("Enter a message"), sanitize = false);
-                }, 0);
-            });
+            promptButton.addEventListener("click", showPrompt);
 
             // Safer Prompt. You can test with <b onclick="alert(0);">Hi</b>
             const saferPromptButton = document.getElementById("safe-prompt-button");
-            saferPromptButton.addEventListener("click", () => {
-                resetOutputTag();
-                setTimeout(() => {
-                    setOutputTag(prompt("Enter a message"), sanitize = true);
-                }, 0);
-            });
+            saferPromptButton.addEventListener("click", showSaferPrompt);
+        }
+
+        function showAlert() {
+            resetOutputTag();
+            setTimeout(() => {
+                alert("Alert processed!");
+            }, 0);
+        }
+        function showConfirm() {
+            resetOutputTag();
+            setTimeout(() => {
+                setOutputTag(confirm("Do you confirm this?"));
+            }, 0);
+        }
+        function showPrompt() {
+            resetOutputTag();
+            setTimeout(() => {
+                setOutputTag(prompt("Enter a message"), sanitize = false);
+            }, 0);
+        }
+        function showSaferPrompt() {
+            resetOutputTag();
+            setTimeout(() => {
+                setOutputTag(prompt("Enter a message"), sanitize = true);
+            }, 0);
         }
 
         // wait for dom to load to initialize the buttons
