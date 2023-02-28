@@ -1,3 +1,5 @@
+# Changelog
+
 ## 02-24-2023 03:23PM PST
 - Added pulse animation for when you hover over the back-to-top button
 
