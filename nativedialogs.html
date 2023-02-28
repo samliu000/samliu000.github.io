@@ -10,11 +10,13 @@
     <link href="images/favicon.ico" rel="icon">
     <script type="text/javascript" src="javascript/purify.js"></script>
     <script>
+        // function that resets the output tag
         function resetOutputTag() {
             const outputElem = document.getElementById("output");
             outputElem.innerHTML = "";
         }
 
+        // function that sets the output tag to be what the user inputted
         function setOutputTag(message, sanitize) {
             if (message == null) {
                 message = "User didn't enter anything";
@@ -26,6 +28,7 @@
             outputElem.innerHTML = `The value returned by the confirm method is : ${message}`;
         }
 
+        // creates the event listeners for the prompt buttons
         function initButtons() {
             // Alert
             const alertButton = document.getElementById("alert-button");
@@ -44,6 +47,7 @@
             saferPromptButton.addEventListener("click", showSaferPrompt);
         }
 
+        // below are functions that show the native dialogs
         function showAlert() {
             resetOutputTag();
             setTimeout(() => {

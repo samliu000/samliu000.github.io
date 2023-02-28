@@ -11,15 +11,12 @@
     <script type="text/javascript" src="javascript/purify.js"></script>
     <script type="module" defer>
         import { onAlertPress, onConfirmPress, onPromptPress } from "./javascript/customdialog.js";
-        // Alert
+        
+        // Set event listeners for the alert, confirm, prompt buttons
         const alertButton = document.getElementById("alert-button");
         alertButton.addEventListener("click", onAlertPress);
-
-        // Confirm
         const confirmButton = document.getElementById("confirm-button");
         confirmButton.addEventListener("click", onConfirmPress);
-
-        // Prompt
         const promptButton = document.getElementById("prompt-button");
         promptButton.addEventListener("click", onPromptPress);
     </script>

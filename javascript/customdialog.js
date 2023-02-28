@@ -1,3 +1,4 @@
+// function that changes the dialog between the confirm, alert, prompt types
 function modifyDialog(title, type) {
   const dialog = document.getElementById("custom-dialog");
 
@@ -37,12 +38,13 @@ function modifyDialog(title, type) {
   }
 }
 
+// resets the output tag to be blank
 function resetOutputTag() {
   const outputElem = document.getElementById("output");
   outputElem.innerHTML = "";
 }
 
-/* Set up dialog buttons */
+// Set up dialog buttons
 function onAlertPress() {
   resetOutputTag();
   setTimeout(() => {
@@ -68,7 +70,7 @@ function onPromptPress() {
   }, 0);
 }
 
-/* Set up form collection */
+// Set up form collection
 function setOutputTag(message, type) {
   message = DOMPurify.sanitize(message);
   const outputElem = document.getElementById("output");
@@ -91,4 +93,5 @@ function onPromptOkPress() {
   const message = document.getElementById("text-input").value;
   setOutputTag(message, "prompt");
 }
+
 export { onAlertPress, onConfirmPress, onPromptPress };
