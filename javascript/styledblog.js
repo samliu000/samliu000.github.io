@@ -13,8 +13,8 @@ function listBlogPosts() {
     const domBlogItem = document.createElement("li");
     domBlogItem.innerHTML = `<h2>${blogPost.title} (${blogPost.date})</h2>
         <p>${blogPost.summary}</p>
-        <button id="edit${i}">Edit</button>
-        <button id="delete${i}">Delete</button>`;
+        <img id="edit${i}" src="images/edit_icon.svg" alt="edit blog post" width="25" height="25">
+        <img id="delete${i}" src="images/trash_icon.svg" alt="delete blog post" width="25" height="25">`;
     blogList.appendChild(domBlogItem);
 
     attachBlogPostListeners(i);
