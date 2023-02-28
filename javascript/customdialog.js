@@ -7,31 +7,34 @@ function modifyDialog(title, type) {
     textInput = `<input id="text-input" type="text"></input><br>`;
   }
 
-  // set up cancel button
-  let cancelButtonFuncName = "onConfirmCancelPress";
-  if (type == "prompt") {
-    cancelButtonFuncName = "onPromptCancelPress";
-  }
-  let cancelButton = `<button onclick="${cancelButtonFuncName}()">Cancel</button>`;
-  if (type == "alert") {
-    cancelButton = "";
-  }
-
-  // set up ok button
-  let okButtonFuncName = "onConfirmOkPress";
-  if (type == "prompt") {
-    okButtonFuncName = "onPromptOkPress";
-  } else if (type == "alert") {
-    okButtonFuncName = "onAlertPromptOkPress";
-  }
+  let cancelBtnHtml =
+    type != "alert" ? `<button id="cancel-dialog">Cancel</button>` : "";
 
   dialog.innerHTML = `
         <h2>${title}</h2>
         <form method="dialog">
             ${textInput}
-            ${cancelButton}              
-            <button onclick='${okButtonFuncName}()'>Ok</button>
+            ${cancelBtnHtml}          
+            <button id="confirm-dialog">Ok</button>
         </form>`;
+
+  // setup cancel event listener
+  const cancelBtn = document.getElementById("cancel-dialog");
+  if (type == "confirm") {
+    cancelBtn.addEventListener("click", onConfirmCancelPress);
+  } else if (type == "prompt") {
+    cancelBtn.addEventListener("click", onPromptCancelPress);
+  }
+
+  // setup confirm event listener
+  const confirmBtn = document.getElementById("confirm-dialog");
+  if (type == "confirm") {
+    confirmBtn.addEventListener("click", onConfirmOkPress);
+  } else if (type == "prompt") {
+    confirmBtn.addEventListener("click", onPromptOkPress);
+  } else if (type == "alert") {
+    confirmBtn.addEventListener("click", onAlertOkPress);
+  }
 }
 
 function resetOutputTag() {
@@ -88,3 +91,4 @@ function onPromptOkPress() {
   const message = document.getElementById("text-input").value;
   setOutputTag(message, "prompt");
 }
+export { onAlertPress, onConfirmPress, onPromptPress };

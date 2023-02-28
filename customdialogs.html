@@ -9,16 +9,29 @@
     <title>Native Dialogs</title>
     <link href="images/favicon.ico" rel="icon">
     <script type="text/javascript" src="javascript/purify.js"></script>
-    <script type="text/javascript" src="javascript/customdialog.js" type="module"></script>
+    <script type="module" defer>
+        import { onAlertPress, onConfirmPress, onPromptPress } from "./javascript/customdialog.js";
+        // Alert
+        const alertButton = document.getElementById("alert-button");
+        alertButton.addEventListener("click", onAlertPress);
+
+        // Confirm
+        const confirmButton = document.getElementById("confirm-button");
+        confirmButton.addEventListener("click", onConfirmPress);
+
+        // Prompt
+        const promptButton = document.getElementById("prompt-button");
+        promptButton.addEventListener("click", onPromptPress);
+    </script>
 </head>
 
 <body>
     <main>
         <h1>Custom Dialogs</h1>
         <div class="button-group">
-            <button onclick="onAlertPress()" id="alert-button">Alert</button>
-            <button onclick="onConfirmPress()" id="confirm-button">Confirm</button>
-            <button onclick="onPromptPress()" id="prompt-button">Prompt</button>
+            <button id="alert-button">Alert</button>
+            <button id="confirm-button">Confirm</button>
+            <button id="prompt-button">Prompt</button>
         </div>
         <dialog id="custom-dialog"></dialog>
         <output id="output"></output>
