@@ -8,16 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Native Dialogs</title>
     <link href="images/favicon.ico" rel="icon">
-    <link href="css/crudstyles.css">
+    <link rel="stylesheet" href="css/crudstyles.css">
     <script type="text/javascript" src="javascript/purify.js"></script>
-    <script type="text/javascript" src="javascript/styledblog.js" defer></script>
+    <script type="module" src="javascript/styledblog.js" defer></script>
 </head>
 
 <body>
     <main>
         <h1>Programming Languages Blog</h1>
         <ul id="blog-list"></ul>
-        <button id="add-blog-post">Add Blog Post</button>
+        <div id="add-button-container">
+            <button id="add-blog-post">Add Blog Post</button>
+        </div>
         <dialog id="blog-dialog"></dialog>
     </main>
 </body>
