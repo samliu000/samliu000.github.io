@@ -1,4 +1,6 @@
-# CSE134B-HW4
-# Name: Samuel Liu
-# PID: A15793529
-## Link to Netlify: https://samuelliu-hw4.netlify.app/
+# My Website
+## Have A Look
+[My Website Link](https://samliu000.github.io/)
+## Summary
+- This is my portfolio website, listing my experiences, projects, and course work
+- This website is written in pure HTML/CSS/JS with no frameworks
