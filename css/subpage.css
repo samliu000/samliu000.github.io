@@ -397,6 +397,10 @@ footer a {
 .experience:nth-child(9) {
   animation-delay: 1.6s;
 }
+.experience:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
 
 .project:nth-child(2) {
   animation-delay: 0.2s;
